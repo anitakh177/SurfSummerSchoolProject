@@ -12,18 +12,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Профиль"
-        navigationButton()
+        
 
         // Do any additional setup after loading the view.
     }
-    private func navigationButton() {
-        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
-        rightBarButtonItem.tintColor = .black
-        navigationItem.rightBarButtonItem = rightBarButtonItem
-    }
-    @objc func didTapSearch() {
-        print("tapped search")
-    }
+   
 
     /*
     // MARK: - Navigation

@@ -38,7 +38,8 @@ private extension TabBarConfigure {
         var viewControllers = [UIViewController]()
         
         allTab.forEach { tab in
-            let controller = UINavigationController(rootViewController: getCurrentViewController(tab: tab))
+            let controller = UINavigationController(rootViewController:
+                                                        getCurrentViewController(tab: tab))
             //let controller = getCurrentViewController(tab: tab)
             let tabBarItem = UITabBarItem(title: tab.title,
                                           image: tab.image,

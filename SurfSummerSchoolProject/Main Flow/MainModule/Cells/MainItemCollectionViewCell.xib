@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="MainItemCollectionViewCell" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="238" height="296"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="238" height="296"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mYQ-Sz-v46">
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="267.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mYQ-Sz-v46" secondAttribute="height" multiplier="168:222" priority="250" id="94u-Xy-paJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW9-bV-K5D">
+                        <rect key="frame" x="0.0" y="275.5" width="238" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePw-Pb-XeG" userLabel="Favorite Button">
+                        <rect key="frame" x="206" y="8" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="heM-nj-ptd"/>
+                            <constraint firstAttribute="width" constant="24" id="i1R-nN-IdD"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart"/>
+                        <connections>
+                            <action selector="favoriteAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y7e-Dg-q7F"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="mYQ-Sz-v46" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0h8-T2-He5"/>
+                <constraint firstItem="UW9-bV-K5D" firstAttribute="top" secondItem="mYQ-Sz-v46" secondAttribute="bottom" constant="8" id="1s4-9P-Nho"/>
+                <constraint firstItem="ePw-Pb-XeG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="6ki-Nm-jk0"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mYQ-Sz-v46" secondAttribute="trailing" id="8u8-RO-UTs"/>
+                <constraint firstAttribute="trailing" secondItem="ePw-Pb-XeG" secondAttribute="trailing" constant="8" id="AQY-es-auG"/>
+                <constraint firstAttribute="trailing" secondItem="UW9-bV-K5D" secondAttribute="trailing" id="AVe-kg-2oj"/>
+                <constraint firstItem="UW9-bV-K5D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D5o-wt-nUI"/>
+                <constraint firstAttribute="bottom" secondItem="UW9-bV-K5D" secondAttribute="bottom" id="bAa-dm-1pb"/>
+                <constraint firstItem="mYQ-Sz-v46" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="tWL-sS-oMm"/>
+            </constraints>
+            <size key="customSize" width="304" height="294"/>
+            <connections>
+                <outlet property="favoriteButton" destination="ePw-Pb-XeG" id="v1x-Ds-YDJ"/>
+                <outlet property="imageView" destination="mYQ-Sz-v46" id="JJ9-ru-wSX"/>
+                <outlet property="titleLabel" destination="UW9-bV-K5D" id="ReH-mV-GfI"/>
+            </connections>
+            <point key="canvasLocation" x="56.521739130434788" y="168.08035714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" width="24" height="24"/>
+    </resources>
+</document>
