@@ -35,6 +35,11 @@ class MainViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configureNavigationBar()
+    }
+    
 }
 
 // MARK: - Private Methods
@@ -42,8 +47,6 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     
     func configureAppearence() {
-        navigationItem.title = "Главная"
-        searchButton()
         collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
                                 forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
@@ -57,25 +60,22 @@ private extension MainViewController {
             
         }
     }
-    private func searchButton() {
+    
+    func configureNavigationBar() {
+        navigationItem.title = "Главная"
+        
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
         rightBarButtonItem.tintColor = .black
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     @objc func didTapSearch() {
-        print("tapped search")
-        //navigationController?.pushViewController(SearchViewController(), animated: true)
-        let searchVC = SearchViewController()
-        let navVC = UINavigationController(rootViewController: searchVC)
-        navVC.modalPresentationStyle = .fullScreen
-        
-        present(navVC, animated: true)
+        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
     
 }
 // MARK: - UICollection
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.items.count
@@ -93,6 +93,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        detailVC.model = model.items[indexPath.row]
+        navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

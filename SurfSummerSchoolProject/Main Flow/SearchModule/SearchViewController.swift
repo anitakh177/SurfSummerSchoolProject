@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Views
     
@@ -20,14 +20,12 @@ class SearchViewController: UIViewController {
         configureAppearence()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        configureNavigationBar()
         searchBar.becomeFirstResponder()
     }
-
-
-   
-
+    
 }
 
 // MARK: - Private Methods
@@ -36,8 +34,6 @@ private extension SearchViewController {
     
     func configureAppearence() {
         createSearchBar()
-        createNavigationBar()
-       
     }
     
     func createSearchBar() {
@@ -47,18 +43,16 @@ private extension SearchViewController {
         searchBar.clipsToBounds = true
     }
     
-    func createNavigationBar() {
+    func configureNavigationBar() {
         let rightNavBar = UIBarButtonItem(customView: searchBar)
         navigationItem.rightBarButtonItem = rightNavBar
    
-        let leftNavBar = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(closeSearchVC))
+        let leftNavBar = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: navigationController, action: #selector(navigationController!.popViewController(animated:)))
         leftNavBar.tintColor = .black
         navigationItem.leftBarButtonItem = leftNavBar
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
-    @objc func closeSearchVC() {
-        print("close tapped")
-       dismiss(animated: true, completion: nil)
-    }
+    
     
 }

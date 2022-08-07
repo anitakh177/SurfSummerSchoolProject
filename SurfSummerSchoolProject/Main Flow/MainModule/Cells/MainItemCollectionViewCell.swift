@@ -32,6 +32,14 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
+            }
+        }
+    }
+    
     // MARK: - Properties
     
     var title: String = "" {
@@ -72,7 +80,7 @@ private extension MainItemCollectionViewCell {
     
     func configureAppearance() {
         titleLabel.textColor = .black
-        titleLabel.font = .systemFont(ofSize: 12)
+        titleLabel.font = .systemFont(ofSize: 15)
         
         imageView.layer.cornerRadius = 12
         
