@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0816A303289F8E420062BFD5 /* FavoriteItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0816A301289F8E420062BFD5 /* FavoriteItemCollectionViewCell.swift */; };
+		0816A304289F8E420062BFD5 /* FavoriteItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0816A302289F8E420062BFD5 /* FavoriteItemCollectionViewCell.xib */; };
 		08494705289E64F20083E424 /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08494703289E64F20083E424 /* DetailTitleTableViewCell.swift */; };
 		08494706289E64F20083E424 /* DetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08494704289E64F20083E424 /* DetailTitleTableViewCell.xib */; };
 		0849470B289E66E40083E424 /* DetailTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08494709289E66E40083E424 /* DetailTextTableViewCell.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0816A301289F8E420062BFD5 /* FavoriteItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		0816A302289F8E420062BFD5 /* FavoriteItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		08494703289E64F20083E424 /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
 		08494704289E64F20083E424 /* DetailTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTitleTableViewCell.xib; sourceTree = "<group>"; };
 		08494709289E66E40083E424 /* DetailTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0816A300289F8E190062BFD5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0816A301289F8E420062BFD5 /* FavoriteItemCollectionViewCell.swift */,
+				0816A302289F8E420062BFD5 /* FavoriteItemCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		08494701289E64070083E424 /* ImageCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		08BEA960289A8F7100919918 /* FavoriteModule */ = {
 			isa = PBXGroup;
 			children = (
+				0816A300289F8E190062BFD5 /* Cells */,
 				08BEA96A289A94B000919918 /* FavoriteViewController.swift */,
 				08BEA96B289A94B000919918 /* FavoriteViewController.xib */,
 			);
@@ -291,6 +305,7 @@
 				08C3E2D6289C20F6001B1A25 /* MainItemCollectionViewCell.xib in Resources */,
 				08494706289E64F20083E424 /* DetailTitleTableViewCell.xib in Resources */,
 				08BEA95B289A5FA000919918 /* Assets.xcassets in Resources */,
+				0816A304289F8E420062BFD5 /* FavoriteItemCollectionViewCell.xib in Resources */,
 				085AD16A289D0EAA00076424 /* DetailViewController.xib in Resources */,
 				0849470C289E66E40083E424 /* DetailTextTableViewCell.xib in Resources */,
 				08BEA976289A950A00919918 /* MainViewController.xib in Resources */,
@@ -311,6 +326,7 @@
 				08494705289E64F20083E424 /* DetailTitleTableViewCell.swift in Sources */,
 				08BEA947289A5C4400919918 /* AppDelegate.swift in Sources */,
 				08BEA967289A917700919918 /* TabBarConfigurator.swift in Sources */,
+				0816A303289F8E420062BFD5 /* FavoriteItemCollectionViewCell.swift in Sources */,
 				08BEA970289A94C400919918 /* ProfileViewController.swift in Sources */,
 				0849470E289E6AAA0083E424 /* DetailItemModel.swift in Sources */,
 				0849470B289E66E40083E424 /* DetailTextTableViewCell.swift in Sources */,

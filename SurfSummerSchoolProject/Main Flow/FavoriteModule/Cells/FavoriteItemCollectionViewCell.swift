@@ -1,13 +1,13 @@
 //
-//  MainCellCollectionViewCell.swift
+//  FavoriteItemCollectionViewCell.swift
 //  SurfSummerSchoolProject
 //
-//  Created by anita on 04.08.2022.
+//  Created by anita on 07.08.2022.
 //
 
 import UIKit
 
-class MainItemCollectionViewCell: UICollectionViewCell {
+class FavoriteItemCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Constants
     
@@ -17,10 +17,13 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Views
-    
-    @IBOutlet private weak var imageView: UIImageView!
+
+    @IBOutlet private  weak var favImage: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var creationDateLabel: UILabel!
+    @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
+    
     
     // MARK: - Events
     
@@ -32,27 +35,34 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
     }
     
-    override var isHighlighted: Bool {
-        didSet {
-            UIView.animate(withDuration: 0.2) {
-                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
-            }
-        }
-    }
     
     // MARK: - Properties
+    
+    var image: UIImage? {
+        didSet {
+            favImage.image = image
+        }
+    }
     
     var title: String = "" {
         didSet {
             titleLabel.text = title
         }
     }
-    var image: UIImage? {
+    
+    var date: String = "" {
         didSet {
-            imageView.image = image
+            creationDateLabel.text = date
         }
     }
-    var isFavorite: Bool = false {
+    
+    var content: String = "" {
+        didSet {
+            contentLabel.text = content
+        }
+    }
+    
+    var isFavorite: Bool = true {
         didSet {
             favoriteButton.setImage(buttonImage, for: .normal)
         }
@@ -63,6 +73,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     @IBAction func favoriteAction(_ sender: UIButton) {
         didFavoriteTapped?()
         isFavorite.toggle()
+        
     }
     
     // MARK: - UICollectionViewCell
@@ -71,20 +82,21 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureAppearance()
     }
-    
+
 }
 
-// MARK: - Private Methods
+// MARK: - Prfivate Methods
 
-private extension MainItemCollectionViewCell {
+private extension FavoriteItemCollectionViewCell {
     
     func configureAppearance() {
-        titleLabel.textColor = .black
+        favImage.layer.cornerRadius = 12
         titleLabel.font = .systemFont(ofSize: 15)
-        
-        imageView.layer.cornerRadius = 12
-        
+        creationDateLabel.font = .systemFont(ofSize: 13)
+        creationDateLabel.textColor = .lightGray
+        contentLabel.font = .systemFont(ofSize: 12, weight: .light)
         favoriteButton.tintColor = .white
-        isFavorite = false
+        isFavorite = true
+        
     }
 }

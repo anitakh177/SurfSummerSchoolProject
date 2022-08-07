@@ -28,6 +28,9 @@ final class MainModel {
         items = Array(repeating: DetailItemModel.createDefault(), count: 100)
     }
     
+    func addToFavorite(item: DetailItemModel) {
+        items.append(item)
+    }
 }
 
 
