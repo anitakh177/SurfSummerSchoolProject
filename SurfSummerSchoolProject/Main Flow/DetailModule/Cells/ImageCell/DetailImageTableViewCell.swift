@@ -15,11 +15,15 @@ class DetailImageTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var image: UIImage? {
+    var imageUrlInString: String = "" {
         didSet {
-            cartImageView.image = image
+            guard let url = URL(string: imageUrlInString) else {
+                return
+            }
+            cartImageView?.loadImage(from: url)
         }
     }
+
     
     // MARK: - UITableViewCell
     
