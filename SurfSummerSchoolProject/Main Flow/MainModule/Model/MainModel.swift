@@ -39,7 +39,7 @@ final class MainModel {
                         content: pictureModel.content,
                         dateCreation: pictureModel.date
                     )
-                    
+                   
                     return result
                     
                 }

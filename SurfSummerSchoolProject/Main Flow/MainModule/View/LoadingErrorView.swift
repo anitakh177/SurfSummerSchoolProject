@@ -27,7 +27,7 @@ class LoadingErrorView: UIView {
         return label
     }()
     
-    private lazy var refreshButton: UIButton = {
+     lazy var reloadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Обновить", for: .normal)
         button.backgroundColor = .black
@@ -36,7 +36,7 @@ class LoadingErrorView: UIView {
     }()
     
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imageView, label, refreshButton])
+        let stack = UIStackView(arrangedSubviews: [imageView, label, reloadButton])
         stack.axis = .vertical
         stack.alignment = .center
         stack.distribution = .equalSpacing
@@ -66,8 +66,8 @@ class LoadingErrorView: UIView {
             
             label.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             
-            refreshButton.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            refreshButton.heightAnchor.constraint(equalToConstant: 48)
+            reloadButton.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            reloadButton.heightAnchor.constraint(equalToConstant: 48)
         
         ])
     }

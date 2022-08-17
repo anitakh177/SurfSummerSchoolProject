@@ -60,12 +60,17 @@ class MainItemCollectionViewCell: UICollectionViewCell {
             favoriteButton.setImage(buttonImage, for: .normal)
         }
     }
-    
+    func setuButtons(sender: UIButton) {
+        favoriteButton.setImage(Constants.fillHeartImage, for: .selected)
+        favoriteButton.setImage(Constants.heartImage, for: .normal)
+    }
     // MARK: - Actions
     
     @IBAction func favoriteAction(_ sender: UIButton) {
         didFavoriteTapped?()
         isFavorite.toggle()
+        //sender.isSelected = !sender.isSelected
+            //UserDefaults.standard.set(sender.isSelected, forKey: "isSaved")
     }
     
     // MARK: - UICollectionViewCell
@@ -90,7 +95,11 @@ private extension MainItemCollectionViewCell {
         imageView.layer.cornerRadius = 12
         
         favoriteButton.tintColor = .white
-        isFavorite = false
+        //isFavorite = false
+       // favoriteButton.isSelected = UserDefaults.standard.bool(forKey: "isSaved")
+    
+        //favoriteButton.isSelected = UserDefaults.standard.bool(forKey: "isSaved")
+        //setuButtons(sender: favoriteButton)
     }
 
 }

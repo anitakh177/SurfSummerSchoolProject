@@ -1,13 +1,13 @@
 //
-//  PictureResponseModel.swift
+//  FavoritePostModel.swift
 //  SurfSummerSchoolProject
 //
-//  Created by anita on 10.08.2022.
+//  Created by anita on 13.08.2022.
 //
 
 import Foundation
 
-struct PictureResponseModel: Codable {
+struct FavoritePostModel: Codable {
 
     // MARK: - Internal Properties
 

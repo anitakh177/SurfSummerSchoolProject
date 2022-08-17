@@ -15,7 +15,7 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
     typealias Output = AbstractOutput
 
     var baseURL: URL? {
-        URL(string: "https://pictures.chronicker.fun/api/a")
+        URL(string: "https://pictures.chronicker.fun/api/")
     }
 
     let path: String

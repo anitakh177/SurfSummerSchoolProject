@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="idX-sB-yEr" id="DGs-MY-Bd3"/>
+                <outlet property="requestStackView" destination="owq-HO-noA" id="vvx-dY-lcR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,6 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="idX-sB-yEr">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iVj-Hn-gXW">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="owq-HO-noA">
                     <rect key="frame" x="16" y="252" width="382" height="68"/>
                     <subviews>
@@ -36,9 +48,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="idX-sB-yEr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="0aY-Rp-agp"/>
                 <constraint firstItem="owq-HO-noA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="0sj-Ke-kBG"/>
                 <constraint firstAttribute="trailing" secondItem="owq-HO-noA" secondAttribute="trailing" constant="16" id="3Bz-RD-iTF"/>
                 <constraint firstItem="owq-HO-noA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="252" id="C2Z-lW-CrQ"/>
+                <constraint firstItem="idX-sB-yEr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GWQ-tk-tgN"/>
+                <constraint firstItem="idX-sB-yEr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="h4d-hD-X7e"/>
+                <constraint firstItem="idX-sB-yEr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="iBx-uq-YZz"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
         </view>

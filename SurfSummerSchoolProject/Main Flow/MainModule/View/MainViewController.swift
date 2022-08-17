@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private let model: MainModel = .init()
+     var model: MainModel = .init()
     
     // MARK: - Views
     
@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAppearence()
-        configureModel()
+        //configureModel()
         getPosts()
 
     }
@@ -49,6 +49,7 @@ class MainViewController: UIViewController {
 // MARK: - Private Methods
 
 private extension MainViewController {
+    
     func getPosts() {
         activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -56,6 +57,7 @@ private extension MainViewController {
                 if isDone == true {
             self.collectionView.reloadData()
             self.activityIndicator.stopAnimating()
+                    
                 } else {
                     DispatchQueue.main.async { [weak self] in
                         self?.configureLoadingErrorView()
@@ -63,6 +65,15 @@ private extension MainViewController {
                 }
             }
         }
+    }
+    
+    func configureReloadButton() {
+        loadingErrorView.reloadButton.addTarget(self, action: #selector(reloadPosts), for: .touchUpInside)
+    }
+    
+    @objc func reloadPosts() {
+        loadingErrorView.isHidden = true
+        getPosts()
     }
     
     func configureModel() {
@@ -80,7 +91,9 @@ private extension MainViewController {
     }
     
     @objc func didTapSearch() {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+        let searchVC = SearchViewController()
+        searchVC.model = model
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     
     func configureAppearence() {
@@ -90,6 +103,8 @@ private extension MainViewController {
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
         configureActivityIndicator()
+        configureReloadButton()
+        
     }
     
     func configureActivityIndicator() {
@@ -109,6 +124,7 @@ private extension MainViewController {
             loadingErrorView.heightAnchor.constraint(equalToConstant: 153)
         
         ])
+       
     }
     
 }
@@ -121,14 +137,25 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainItemCollectionViewCell.self)", for: indexPath)
+        
         if let cell = cell as? MainItemCollectionViewCell {
+            
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
             cell.imageUrlInString = item.imageUrlInString
             cell.didFavoriteTapped = { [weak self] in
-                self?.model.items[indexPath.row].isFavorite.toggle()
+               
+                FavoritePostStorage.updateWith(favorite: item, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    guard let error = error else {
+                        self.model.items[indexPath.row].isFavorite.toggle()
+                        return
+                    }
+
+                }
             }
         }
         return cell

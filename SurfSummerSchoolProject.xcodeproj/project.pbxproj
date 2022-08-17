@@ -25,6 +25,8 @@
 		082362A928A3C51100ADE080 /* BaseTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082362A828A3C51100ADE080 /* BaseTokenStorage.swift */; };
 		082362AE28A3C58300ADE080 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082362AD28A3C58300ADE080 /* MainModel.swift */; };
 		082362B128A3C5BE00ADE080 /* DetailItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082362B028A3C5BE00ADE080 /* DetailItemModel.swift */; };
+		083AD0C028A799080022DA37 /* FavoritePostStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AD0BF28A799080022DA37 /* FavoritePostStorage.swift */; };
+		083AD0C228A7C6270022DA37 /* FavoritePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AD0C128A7C6270022DA37 /* FavoritePostModel.swift */; };
 		08494705289E64F20083E424 /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08494703289E64F20083E424 /* DetailTitleTableViewCell.swift */; };
 		08494706289E64F20083E424 /* DetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08494704289E64F20083E424 /* DetailTitleTableViewCell.xib */; };
 		0849470B289E66E40083E424 /* DetailTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08494709289E66E40083E424 /* DetailTextTableViewCell.swift */; };
@@ -70,6 +72,8 @@
 		082362A828A3C51100ADE080 /* BaseTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTokenStorage.swift; sourceTree = "<group>"; };
 		082362AD28A3C58300ADE080 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		082362B028A3C5BE00ADE080 /* DetailItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemModel.swift; sourceTree = "<group>"; };
+		083AD0BF28A799080022DA37 /* FavoritePostStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePostStorage.swift; sourceTree = "<group>"; };
+		083AD0C128A7C6270022DA37 /* FavoritePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePostModel.swift; sourceTree = "<group>"; };
 		08494703289E64F20083E424 /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
 		08494704289E64F20083E424 /* DetailTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTitleTableViewCell.xib; sourceTree = "<group>"; };
 		08494709289E66E40083E424 /* DetailTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextTableViewCell.swift; sourceTree = "<group>"; };
@@ -171,9 +175,8 @@
 		082362A328A3C4AD00ADE080 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				082362A428A3C4BB00ADE080 /* TokenStorage.swift */,
-				082362A628A3C4F700ADE080 /* TokenContainer.swift */,
-				082362A828A3C51100ADE080 /* BaseTokenStorage.swift */,
+				083AD0BE28A798DD0022DA37 /* FavoritePostStorage */,
+				083AD0BD28A798CB0022DA37 /* TokenStorage */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -202,6 +205,25 @@
 				082362A328A3C4AD00ADE080 /* Storage */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		083AD0BD28A798CB0022DA37 /* TokenStorage */ = {
+			isa = PBXGroup;
+			children = (
+				082362A428A3C4BB00ADE080 /* TokenStorage.swift */,
+				082362A628A3C4F700ADE080 /* TokenContainer.swift */,
+				082362A828A3C51100ADE080 /* BaseTokenStorage.swift */,
+			);
+			path = TokenStorage;
+			sourceTree = "<group>";
+		};
+		083AD0BE28A798DD0022DA37 /* FavoritePostStorage */ = {
+			isa = PBXGroup;
+			children = (
+				083AD0BF28A799080022DA37 /* FavoritePostStorage.swift */,
+				083AD0C128A7C6270022DA37 /* FavoritePostModel.swift */,
+			);
+			path = FavoritePostStorage;
 			sourceTree = "<group>";
 		};
 		08494701289E64070083E424 /* ImageCell */ = {
@@ -488,6 +510,8 @@
 				08BEA970289A94C400919918 /* ProfileViewController.swift in Sources */,
 				082362A528A3C4BB00ADE080 /* TokenStorage.swift in Sources */,
 				082362AE28A3C58300ADE080 /* MainModel.swift in Sources */,
+				083AD0C228A7C6270022DA37 /* FavoritePostModel.swift in Sources */,
+				083AD0C028A799080022DA37 /* FavoritePostStorage.swift in Sources */,
 				0823629328A3C32E00ADE080 /* AuthService.swift in Sources */,
 				0849470B289E66E40083E424 /* DetailTextTableViewCell.swift in Sources */,
 				0823629528A3C34400ADE080 /* AuthResponseModel.swift in Sources */,
